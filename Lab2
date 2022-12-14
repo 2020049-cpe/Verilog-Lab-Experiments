@@ -1,0 +1,269 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_000002203817ee60 .scope module, "Experiment2" "Experiment2" 2 51;
+ .timescale 0 0;
+v00000220381ef700_0 .net "NAND1", 0 0, L_0000022038196cf0;  1 drivers
+v00000220381eec60_0 .net "NOR1", 0 0, L_0000022038196e40;  1 drivers
+v00000220381f0a30_0 .var "a", 0 0;
+v00000220381f1390_0 .var "b", 0 0;
+v00000220381efbd0_0 .net "negativeAND1", 0 0, L_0000022038196eb0;  1 drivers
+v00000220381f1570_0 .net "negativeOR1", 0 0, L_0000022038196dd0;  1 drivers
+v00000220381f0c10_0 .net "oneBresult", 0 0, L_00000220381974d0;  1 drivers
+v00000220381efdb0_0 .net "twoAresult", 0 0, L_00000220381f1a80;  1 drivers
+v00000220381f1430_0 .net "twoBresult", 0 0, L_00000220381f27a0;  1 drivers
+S_000002203817fbd0 .scope module, "A1" "deMorgan" 2 59, 2 1 0, S_000002203817ee60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /OUTPUT 1 "NAND1";
+    .port_info 3 /OUTPUT 1 "negativeOR1";
+    .port_info 4 /OUTPUT 1 "NOR1";
+    .port_info 5 /OUTPUT 1 "negativeAND1";
+L_0000022038196f20 .functor NOT 1, v00000220381f0a30_0, C4<0>, C4<0>, C4<0>;
+L_0000022038196c80 .functor NOT 1, v00000220381f1390_0, C4<0>, C4<0>, C4<0>;
+L_0000022038196cf0 .functor NAND 1, v00000220381f0a30_0, v00000220381f1390_0, C4<1>, C4<1>;
+L_0000022038196dd0 .functor OR 1, L_0000022038196f20, L_0000022038196c80, C4<0>, C4<0>;
+L_0000022038196e40 .functor NOR 1, v00000220381f0a30_0, v00000220381f1390_0, C4<0>, C4<0>;
+L_0000022038196eb0 .functor AND 1, L_0000022038196f20, L_0000022038196c80, C4<1>, C4<1>;
+v0000022038152f30_0 .net "NAND1", 0 0, L_0000022038196cf0;  alias, 1 drivers
+v00000220381eef80_0 .net "NOR1", 0 0, L_0000022038196e40;  alias, 1 drivers
+v00000220381ef480_0 .net "a", 0 0, v00000220381f0a30_0;  1 drivers
+v00000220381ef020_0 .net "b", 0 0, v00000220381f1390_0;  1 drivers
+v00000220381ee940_0 .net "negativeAND1", 0 0, L_0000022038196eb0;  alias, 1 drivers
+v00000220381ee9e0_0 .net "negativeOR1", 0 0, L_0000022038196dd0;  alias, 1 drivers
+v00000220381eeda0_0 .net "notA", 0 0, L_0000022038196f20;  1 drivers
+v00000220381eea80_0 .net "notB", 0 0, L_0000022038196c80;  1 drivers
+S_0000022038184a70 .scope module, "A2" "twoA" 2 61, 2 29 0, S_000002203817ee60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /OUTPUT 1 "x";
+L_0000022038197540 .functor NOR 1, v00000220381f0a30_0, v00000220381f0a30_0, C4<0>, C4<0>;
+L_00000220381975b0 .functor NOR 1, v00000220381f1390_0, v00000220381f1390_0, C4<0>, C4<0>;
+L_00000220381f1a80 .functor NOR 1, L_0000022038197540, L_00000220381975b0, C4<0>, C4<0>;
+v00000220381eee40_0 .net "a", 0 0, v00000220381f0a30_0;  alias, 1 drivers
+v00000220381eeee0_0 .net "b", 0 0, v00000220381f1390_0;  alias, 1 drivers
+v00000220381ef2a0_0 .net "nor1", 0 0, L_0000022038197540;  1 drivers
+v00000220381eeb20_0 .net "nor2", 0 0, L_00000220381975b0;  1 drivers
+v00000220381ef0c0_0 .net "x", 0 0, L_00000220381f1a80;  alias, 1 drivers
+S_0000022038184c00 .scope module, "B1" "oneB" 2 60, 2 17 0, S_000002203817ee60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /OUTPUT 1 "x";
+L_0000022038197230 .functor NOT 1, v00000220381f0a30_0, C4<0>, C4<0>, C4<0>;
+L_0000022038197460 .functor NOT 1, v00000220381f1390_0, C4<0>, C4<0>, C4<0>;
+L_00000220381972a0 .functor OR 1, L_0000022038197230, L_0000022038197460, C4<0>, C4<0>;
+L_00000220381974d0 .functor NOT 1, L_00000220381972a0, C4<0>, C4<0>, C4<0>;
+v00000220381ef160_0 .net "a", 0 0, v00000220381f0a30_0;  alias, 1 drivers
+v00000220381eed00_0 .net "b", 0 0, v00000220381f1390_0;  alias, 1 drivers
+v00000220381ef200_0 .net "notA", 0 0, L_0000022038197230;  1 drivers
+v00000220381ee8a0_0 .net "notAOrnotB", 0 0, L_00000220381972a0;  1 drivers
+v00000220381ef7a0_0 .net "notB", 0 0, L_0000022038197460;  1 drivers
+v00000220381ef3e0_0 .net "x", 0 0, L_00000220381974d0;  alias, 1 drivers
+S_00000220382cce40 .scope module, "B2" "twoB" 2 62, 2 40 0, S_000002203817ee60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /OUTPUT 1 "x";
+L_00000220381f1e70 .functor NAND 1, v00000220381f0a30_0, v00000220381f0a30_0, C4<1>, C4<1>;
+L_00000220381f2570 .functor NAND 1, v00000220381f1390_0, v00000220381f1390_0, C4<1>, C4<1>;
+L_00000220381f27a0 .functor NAND 1, L_00000220381f1e70, L_00000220381f2570, C4<1>, C4<1>;
+v00000220381ef340_0 .net "a", 0 0, v00000220381f0a30_0;  alias, 1 drivers
+v00000220381ef520_0 .net "b", 0 0, v00000220381f1390_0;  alias, 1 drivers
+v00000220381eebc0_0 .net "nand1", 0 0, L_00000220381f1e70;  1 drivers
+v00000220381ef5c0_0 .net "nand2", 0 0, L_00000220381f2570;  1 drivers
+v00000220381ef660_0 .net "x", 0 0, L_00000220381f27a0;  alias, 1 drivers
+    .scope S_000002203817ee60;
+T_0 ;
+    %vpi_call 2 66 "$dumpfile", "Lab2-Munoz.vcd" {0 0 0};
+    %vpi_call 2 67 "$dumpvars", 32'sb11111111111111111111111111111111, S_000002203817fbd0, S_0000022038184c00, S_0000022038184a70, S_00000220382cce40 {0 0 0};
+    %vpi_call 2 68 "$monitor", "%b", v00000220381ef700_0, v00000220381f1570_0, v00000220381eec60_0, v00000220381efbd0_0, v00000220381f0c10_0, v00000220381efdb0_0, v00000220381f1430_0 {0 0 0};
+    %end;
+    .thread T_0;
+    .scope S_000002203817ee60;
+T_1 ;
+    %delay 1, 0;
+    %vpi_call 2 74 "$display", "DeMorgan's Law" {0 0 0};
+    %delay 1, 0;
+    %vpi_call 2 75 "$display", "~((a)(b))" {0 0 0};
+    %delay 1, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000220381f0a30_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000220381f1390_0, 0, 1;
+    %vpi_call 2 77 "$monitor", "a=%b, b=%b, n=%b", v00000220381f0a30_0, v00000220381f1390_0, v00000220381ef700_0 {0 0 0};
+    %delay 1, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000220381f0a30_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000220381f1390_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000220381f0a30_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000220381f1390_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000220381f0a30_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000220381f1390_0, 0, 1;
+    %delay 1, 0;
+    %vpi_call 2 83 "$display", "(~a)+(~b)" {0 0 0};
+    %delay 1, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000220381f0a30_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000220381f1390_0, 0, 1;
+    %vpi_call 2 85 "$monitor", "a=%b, b=%b, n=%b", v00000220381f0a30_0, v00000220381f1390_0, v00000220381f1570_0 {0 0 0};
+    %delay 1, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000220381f0a30_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000220381f1390_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000220381f0a30_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000220381f1390_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000220381f0a30_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000220381f1390_0, 0, 1;
+    %delay 1, 0;
+    %load/vec4 v00000220381ef700_0;
+    %load/vec4 v00000220381f1570_0;
+    %cmp/e;
+    %jmp/0xz  T_1.0, 4;
+    %vpi_call 2 90 "$display", "Therefore, ~((a)(b)) == (~a)+(~b)\012" {0 0 0};
+    %jmp T_1.1;
+T_1.0 ;
+    %vpi_call 2 92 "$display", "Therefore, ~((a)(b)) != (~a)+(~b)\012" {0 0 0};
+T_1.1 ;
+    %delay 1, 0;
+    %vpi_call 2 95 "$display", "~(a+b)" {0 0 0};
+    %delay 1, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000220381f0a30_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000220381f1390_0, 0, 1;
+    %vpi_call 2 97 "$monitor", "a=%b, b=%b, n=%b", v00000220381f0a30_0, v00000220381f1390_0, v00000220381eec60_0 {0 0 0};
+    %delay 1, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000220381f0a30_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000220381f1390_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000220381f0a30_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000220381f1390_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000220381f0a30_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000220381f1390_0, 0, 1;
+    %delay 1, 0;
+    %vpi_call 2 102 "$display", "(~a)(~b)" {0 0 0};
+    %delay 1, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000220381f0a30_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000220381f1390_0, 0, 1;
+    %vpi_call 2 104 "$monitor", "a=%b, b=%b, n=%b", v00000220381f0a30_0, v00000220381f1390_0, v00000220381efbd0_0 {0 0 0};
+    %delay 1, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000220381f0a30_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000220381f1390_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000220381f0a30_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000220381f1390_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000220381f0a30_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000220381f1390_0, 0, 1;
+    %delay 1, 0;
+    %load/vec4 v00000220381eec60_0;
+    %load/vec4 v00000220381efbd0_0;
+    %cmp/e;
+    %jmp/0xz  T_1.2, 4;
+    %vpi_call 2 109 "$display", "Therefore, ~(a+b) == (~a)(~b)\012" {0 0 0};
+    %jmp T_1.3;
+T_1.2 ;
+    %vpi_call 2 111 "$display", "Therefore, ~(a+b) != (~a)(~b)\012" {0 0 0};
+T_1.3 ;
+    %delay 1, 0;
+    %vpi_call 2 114 "$display", "part 1B" {0 0 0};
+    %vpi_call 2 115 "$monitor", "a=%b, b=%b, n=%b", v00000220381f0a30_0, v00000220381f1390_0, v00000220381f0c10_0 {0 0 0};
+    %delay 1, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000220381f0a30_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000220381f1390_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000220381f0a30_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000220381f1390_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000220381f0a30_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000220381f1390_0, 0, 1;
+    %delay 1, 0;
+    %vpi_call 2 119 "$display", "\012part 2A" {0 0 0};
+    %vpi_call 2 120 "$monitor", "a=%b, b=%b, n=%b", v00000220381f0a30_0, v00000220381f1390_0, v00000220381efdb0_0 {0 0 0};
+    %delay 1, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000220381f0a30_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000220381f1390_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000220381f0a30_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000220381f1390_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000220381f0a30_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000220381f1390_0, 0, 1;
+    %delay 1, 0;
+    %vpi_call 2 124 "$display", "\012part 2B" {0 0 0};
+    %vpi_call 2 125 "$monitor", "a=%b, b=%b, n=%b", v00000220381f0a30_0, v00000220381f1390_0, v00000220381f1430_0 {0 0 0};
+    %delay 1, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000220381f0a30_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000220381f1390_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000220381f0a30_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000220381f1390_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000220381f0a30_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000220381f1390_0, 0, 1;
+    %delay 1, 0;
+    %vpi_call 2 129 "$finish" {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "Lab2-Munoz.v";
